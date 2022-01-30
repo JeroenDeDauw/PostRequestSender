@@ -11,6 +11,8 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \Jeroen\PostRequestSender\SpyPostRequestSender
+ * @covers \Jeroen\PostRequestSender\StubPostRequestSender
+ * @covers \Jeroen\PostRequestSender\PostRequest
  */
 class SpyPostRequestSenderTest extends TestCase {
 
