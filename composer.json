@@ -1,6 +1,6 @@
 {
 	"name": "jeroen/post-request-sender",
-	"description": "Minimal interface for sending post quest, including test double",
+	"description": "Micro library with interface for sending post requests. Includes test doubles and adapters",
 	"homepage": "https://github.com/JeroenDeDauw/PostRequestSender",
 	"license": "GPL-2.0-or-later",
 	"authors": [
