@@ -18,38 +18,74 @@ class TestResponse implements ResponseInterface {
 	) {
 	}
 
+	/**
+	 * Unsupported
+	 * @codeCoverageIgnore
+	 */
 	public function getProtocolVersion(): string {
 		return '';
 	}
 
+	/**
+	 * Unsupported
+	 * @codeCoverageIgnore
+	 */
 	public function withProtocolVersion( $version ): self {
 		return $this;
 	}
 
+	/**
+	 * Unsupported
+	 * @codeCoverageIgnore
+	 */
 	public function getHeaders(): array {
 		return [];
 	}
 
+	/**
+	 * Unsupported
+	 * @codeCoverageIgnore
+	 */
 	public function hasHeader( $name ): bool {
 		return false;
 	}
 
+	/**
+	 * Unsupported
+	 * @codeCoverageIgnore
+	 */
 	public function getHeader( $name ): array {
 		return [];
 	}
 
+	/**
+	 * Unsupported
+	 * @codeCoverageIgnore
+	 */
 	public function getHeaderLine( $name ): string {
 		return '';
 	}
 
+	/**
+	 * Unsupported
+	 * @codeCoverageIgnore
+	 */
 	public function withHeader( $name, $value ): self {
 		return $this;
 	}
 
+	/**
+	 * Unsupported
+	 * @codeCoverageIgnore
+	 */
 	public function withAddedHeader( $name, $value ): self {
 		return $this;
 	}
 
+	/**
+	 * Unsupported
+	 * @codeCoverageIgnore
+	 */
 	public function withoutHeader( $name ): self {
 		return $this;
 	}
@@ -65,6 +101,10 @@ class TestResponse implements ResponseInterface {
 		} );
 	}
 
+	/**
+	 * Unsupported
+	 * @codeCoverageIgnore
+	 */
 	public function withBody( StreamInterface $body ): self {
 		return $this;
 	}
@@ -73,10 +113,18 @@ class TestResponse implements ResponseInterface {
 		return $this->statusCode;
 	}
 
+	/**
+	 * Unsupported
+	 * @codeCoverageIgnore
+	 */
 	public function withStatus( $code, $reasonPhrase = '' ): self {
 		return $this;
 	}
 
+	/**
+	 * Unsupported
+	 * @codeCoverageIgnore
+	 */
 	public function getReasonPhrase(): string {
 		return '';
 	}
