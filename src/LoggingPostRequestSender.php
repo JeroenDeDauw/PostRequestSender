@@ -28,7 +28,18 @@ class LoggingPostRequestSender implements PostRequestSender {
 			array_diff_key( $fields, array_flip( $this->fieldsToOmit ) )
 		);
 
-		return $this->requestSender->post( $url, $fields );
+		$response = $this->requestSender->post( $url, $fields );
+
+		$this->logger->log(
+			$this->logLevel,
+			'Response from request to ' . $url,
+			[
+				'statusCode' => $response->getStatusCode(),
+				'body' => $response->getBody()->getContents()
+			]
+		);
+
+		return $response;
 	}
 
 }
