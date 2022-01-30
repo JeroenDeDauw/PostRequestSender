@@ -16,7 +16,7 @@ class SpyPostRequestSenderTest extends TestCase {
 		$spy->post( 'http://first.url', [ 'foo' => 'bar' ] );
 		$spy->post( 'http://second.url', [ 'baz' => 'bah', 'pew' => 1337 ] );
 
-		$this->assertSame(
+		$this->assertEquals(
 			[
 				new PostRequest( 'http://first.url', [ 'foo' => 'bar' ] ),
 				new PostRequest( 'http://second.url', [ 'baz' => 'bah', 'pew' => 1337 ] ),
