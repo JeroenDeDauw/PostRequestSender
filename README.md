@@ -30,6 +30,10 @@ $requestSender->post( 'https://example.com', [ 'foo' => 'bar', 'baz' => 42 ] );
 
 ### 1.0.0 (2022-01-)
 
-* Initial release with `PostRequestSender` and `SpyPostRequestSender`
+Initial release with
+
+* `PostRequestSender` interface
+* `SpyPostRequestSender` test double
+* `GuzzlePostRequestSender` implementation
 
 [doubles]: https://en.wikipedia.org/wiki/Test_double

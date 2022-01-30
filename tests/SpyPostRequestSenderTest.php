@@ -8,6 +8,9 @@ use Jeroen\PostRequestSender\PostRequest;
 use Jeroen\PostRequestSender\SpyPostRequestSender;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers \Jeroen\PostRequestSender\SpyPostRequestSender
+ */
 class SpyPostRequestSenderTest extends TestCase {
 
 	public function testGetCalls(): void {
