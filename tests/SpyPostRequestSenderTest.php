@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 class SpyPostRequestSenderTest extends TestCase {
 
 	public function testGetCalls(): void {
-		$spy = new SpyPostRequestSender( new StubPostRequestSender(  ) );
+		$spy = new SpyPostRequestSender( new StubPostRequestSender() );
 
 		$spy->post( 'http://first.url', [ 'foo' => 'bar' ] );
 		$spy->post( 'http://second.url', [ 'baz' => 'bah', 'pew' => 1337 ] );
