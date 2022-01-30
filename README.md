@@ -18,7 +18,7 @@ interface PostRequestSender {
 	 * @param string $url
 	 * @param array<string, mixed> $fields
 	 */
-	public function post( string $url, array $fields ): void;
+	public function post( string $url, array $fields ): ResponseInterface;
 
 }
 ```
@@ -34,7 +34,10 @@ $requestSender->post( 'https://example.com', [ 'foo' => 'bar', 'baz' => 42 ] );
 Initial release with
 
 * `PostRequestSender` interface
-* `SpyPostRequestSender` test double
+* `SpyPostRequestSender` test double (and `PostRequest` value object)
+* `StubPostRequestSender` test double
 * `GuzzlePostRequestSender` implementation
+* `LoggingPostRequestSender` decorator
+* `TestResponse` helper implementation or PSR7 `ResponseInterface`
 
 [doubles]: https://en.wikipedia.org/wiki/Test_double

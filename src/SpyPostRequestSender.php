@@ -4,6 +4,8 @@ declare( strict_types = 1 );
 
 namespace Jeroen\PostRequestSender;
 
+use Psr\Http\Message\ResponseInterface;
+
 class SpyPostRequestSender implements PostRequestSender {
 
 	/**
@@ -11,8 +13,15 @@ class SpyPostRequestSender implements PostRequestSender {
 	 */
 	private array $calls = [];
 
-	public function post( string $url, array $fields ): void {
+	public function __construct(
+		private PostRequestSender $requestSender = new StubPostRequestSender()
+	) {
+	}
+
+	public function post( string $url, array $fields ): ResponseInterface {
 		$this->calls[] = new PostRequest( $url, $fields );
+
+		return $this->requestSender->post( $url, $fields );
 	}
 
 	/**
