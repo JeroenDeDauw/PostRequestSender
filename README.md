@@ -7,7 +7,7 @@
 [![Latest Stable Version](https://poser.pugx.org/jeroen/post-request-sender/version.png)](https://packagist.org/packages/jeroen/post-request-sender)
 [![Download count](https://poser.pugx.org/jeroen/post-request-sender/d/total.png)](https://packagist.org/packages/jeroen/post-request-sender)
 
-Micro library with `PostRequestSender` interface and a `SpyPostRequestSender` [test double][doubles].
+Micro library with `PostRequestSender` interface and some [test doubles][doubles].
 
 For the common cases where you do not need the complexity of the heavyweight libraries. 
 
@@ -18,18 +18,36 @@ interface PostRequestSender {
 	 * @param string $url
 	 * @param array<string, mixed> $fields
 	 */
-	public function post( string $url, array $fields ): ResponseInterface;
+	public function post( string $url, array $fields ): Psr\Http\Message\ResponseInterface;
 
 }
 ```
+
+## Usage
 
 ```php
 $requestSender->post( 'https://example.com', [ 'foo' => 'bar', 'baz' => 42 ] );
 ```
 
+## Included implementations
+
+Adapters
+
+* `GuzzlePostRequestSender` Adapter for Guzzle
+
+Decorators
+
+* `LoggingPostRequestSender` Takes a `Psr\Log\LoggerInterface`
+* `SpyPostRequestSender` Test double that records calls
+
+Test doubles
+
+* `SpyPostRequestSender` Test double that records calls
+* `StubPostRequestSender` Test double that returns a response provided in the constructor
+
 ## Release notes
 
-### 1.0.0 (2022-01-)
+### 1.0.0 (2022-01-30)
 
 Initial release with
 
