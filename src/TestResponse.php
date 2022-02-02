@@ -10,8 +10,6 @@ use Psr\Http\Message\StreamInterface;
 
 class TestResponse implements ResponseInterface {
 
-	private bool $gotBody = false;
-
 	public function __construct(
 		private readonly string $body = '',
 		private readonly int $statusCode = 200
@@ -91,12 +89,14 @@ class TestResponse implements ResponseInterface {
 	}
 
 	public function getBody(): StreamInterface {
-		return new PumpStream( function() {
-			if ( $this->gotBody ) {
+		$gotBody = false;
+
+		return new PumpStream( function() use ( &$gotBody ) {
+			if ( $gotBody ) {
 				return null;
 			}
 
-			$this->gotBody = true;
+			$gotBody = true;
 			return $this->body;
 		} );
 	}

@@ -47,6 +47,10 @@ Test doubles
 
 ## Release notes
 
+### 1.0.1 (2022-02-02)
+
+* Fixed behavior of `TestResponse::getBody`
+
 ### 1.0.0 (2022-01-30)
 
 Initial release with
