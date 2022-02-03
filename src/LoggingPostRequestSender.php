@@ -21,7 +21,7 @@ class LoggingPostRequestSender implements PostRequestSender {
 	) {
 	}
 
-	public function post( string $url, array $fields ): ResponseInterface {
+	public function post( string $url, array $fields ): PostResponse {
 		$this->logger->log(
 			$this->logLevel,
 			'Post request to ' . $url,
@@ -34,8 +34,8 @@ class LoggingPostRequestSender implements PostRequestSender {
 			$this->logLevel,
 			'Response from request to ' . $url,
 			[
-				'statusCode' => $response->getStatusCode(),
-				'body' => $response->getBody()->getContents()
+				'statusCode' => $response->statusCode,
+				'body' => $response->body
 			]
 		);
 

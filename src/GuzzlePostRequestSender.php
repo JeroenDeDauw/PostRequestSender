@@ -5,7 +5,6 @@ declare( strict_types = 1 );
 namespace Jeroen\PostRequestSender;
 
 use GuzzleHttp\Client;
-use Psr\Http\Message\ResponseInterface;
 
 class GuzzlePostRequestSender implements PostRequestSender {
 
@@ -14,10 +13,15 @@ class GuzzlePostRequestSender implements PostRequestSender {
 	) {
 	}
 
-	public function post( string $url, array $fields ): ResponseInterface {
-		return $this->httpClient->post(
+	public function post( string $url, array $fields ): PostResponse {
+		$response = $this->httpClient->post(
 			$url,
 			[ 'form_params' => $fields ]
+		);
+
+		return new PostResponse(
+			statusCode: $response->getStatusCode(),
+			body: $response->getBody()->getContents()
 		);
 	}
 

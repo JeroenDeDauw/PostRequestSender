@@ -15,6 +15,6 @@ interface PostRequestSender {
 	 *
 	 * @throws Throwable
 	 */
-	public function post( string $url, array $fields ): ResponseInterface;
+	public function post( string $url, array $fields ): PostResponse;
 
 }

@@ -18,7 +18,7 @@ interface PostRequestSender {
 	 * @param string $url
 	 * @param array<string, mixed> $fields
 	 */
-	public function post( string $url, array $fields ): Psr\Http\Message\ResponseInterface;
+	public function post( string $url, array $fields ): PostResponse;
 
 }
 ```
@@ -26,7 +26,9 @@ interface PostRequestSender {
 ## Usage
 
 ```php
-$requestSender->post( 'https://example.com', [ 'foo' => 'bar', 'baz' => 42 ] );
+$response = $requestSender->post( 'https://example.com', [ 'foo' => 'bar', 'baz' => 42 ] );
+echo $response->body;
+echo $response->statusCode;
 ```
 
 ## Included implementations
@@ -46,6 +48,10 @@ Test doubles
 * `StubPostRequestSender` Test double that returns a response provided in the constructor
 
 ## Release notes
+
+### 2.0.0 (2022-02-03)
+
+* Ditched `ResponseInterface` in favor of a new simple value object `PostResponse`
 
 ### 1.0.1 (2022-02-02)
 

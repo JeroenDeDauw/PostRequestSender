@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 
 namespace Jeroen\PostRequestSender\Tests;
 
+use Jeroen\PostRequestSender\PostResponse;
 use Jeroen\PostRequestSender\StubPostRequestSender;
-use Jeroen\PostRequestSender\TestResponse;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -22,30 +22,30 @@ class StubPostRequestSenderTest extends TestCase {
 
 		$this->assertSame(
 			'',
-			$response->getBody()->getContents()
+			$response->body
 		);
 
 		$this->assertSame(
 			200,
-			$response->getStatusCode()
+			$response->statusCode
 		);
 	}
 
 	public function testAlternativeResponse(): void {
 		$stubSender = new StubPostRequestSender(
-			new TestResponse( 'TestBody', 418 )
+			new PostResponse( 418, 'TestBody' )
 		);
 
 		$response = $stubSender->post( 'https://example.com', [ 'foo' => 'bar' ] );
 
 		$this->assertSame(
 			'TestBody',
-			$response->getBody()->getContents()
+			$response->body
 		);
 
 		$this->assertSame(
 			418,
-			$response->getStatusCode()
+			$response->statusCode
 		);
 	}
 

@@ -18,7 +18,7 @@ class SpyPostRequestSender implements PostRequestSender {
 	) {
 	}
 
-	public function post( string $url, array $fields ): ResponseInterface {
+	public function post( string $url, array $fields ): PostResponse {
 		$this->calls[] = new PostRequest( $url, $fields );
 
 		return $this->requestSender->post( $url, $fields );

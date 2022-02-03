@@ -4,16 +4,14 @@ declare( strict_types = 1 );
 
 namespace Jeroen\PostRequestSender;
 
-use Psr\Http\Message\ResponseInterface;
-
 class StubPostRequestSender implements PostRequestSender {
 
 	public function __construct(
-		private ResponseInterface $response = new TestResponse()
+		private PostResponse $response = new PostResponse()
 	) {
 	}
 
-	public function post( string $url, array $fields ): ResponseInterface {
+	public function post( string $url, array $fields ): PostResponse {
 		return $this->response;
 	}
 
