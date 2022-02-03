@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @covers \Jeroen\PostRequestSender\StubPostRequestSender
  * @covers \Jeroen\PostRequestSender\PostRequest
- * @covers \Jeroen\PostRequestSender\TestResponse
+ * @covers \Jeroen\PostRequestSender\PostResponse
  */
 class StubPostRequestSenderTest extends TestCase {
 
