@@ -4,8 +4,6 @@ declare( strict_types = 1 );
 
 namespace Jeroen\PostRequestSender;
 
-use Psr\Http\Message\ResponseInterface;
-
 class SpyPostRequestSender implements PostRequestSender {
 
 	/**

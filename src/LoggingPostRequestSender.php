@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 
 namespace Jeroen\PostRequestSender;
 
-use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 
