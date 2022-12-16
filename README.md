@@ -1,6 +1,6 @@
 # Post Request Sender
 
-[![Build Status](https://img.shields.io/github/workflow/status/JeroenDeDauw/PostRequestSender/CI)](https://github.com/JeroenDeDauw/PostRequestSender/actions?query=workflow%3ACI)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/JeroenDeDauw/PostRequestSender/ci.yml?branch=master)](https://github.com/JeroenDeDauw/PostRequestSender/actions?query=workflow%3ACI)
 [![codecov](https://codecov.io/gh/JeroenDeDauw/PostRequestSender/branch/master/graph/badge.svg?token=GnOG3FF16Z)](https://codecov.io/gh/JeroenDeDauw/PostRequestSender)
 [![Type Coverage](https://shepherd.dev/github/JeroenDeDauw/PostRequestSender/coverage.svg)](https://shepherd.dev/github/JeroenDeDauw/PostRequestSender)
 [![Psalm level](https://shepherd.dev/github/JeroenDeDauw/PostRequestSender/level.svg)](psalm.xml)
